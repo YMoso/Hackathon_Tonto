@@ -63,45 +63,15 @@
     </div>
   </div>
 
-  <!-- Bottom Navigation -->
-  <nav class="bottom-nav">
-    <a href="main_page.html" class="nav-item">
-      <span class="material-icons">home</span>
-      <p>Home</p>
-    </a>
-    <a href="calendar.html" class="nav-item">
-      <span class="material-icons">calendar_today</span>
-      <p>Calendar</p>
-    </a>
-    <a href="profile.html" class="nav-item">
-      <span class="material-icons">person</span>
-      <p>Profile</p>
-    </a>
-  </nav>
+<!-- Footer placeholder -->
+  <div id="footer-placeholder"></div>
 
-  <script>
-  const modal = document.getElementById("photoModal");
-  const modalImg = document.getElementById("modalImage");
-  const zoomablePhotos = document.querySelectorAll(".zoomable-photo");
-  const closeBtn = document.querySelector(".close");
 
-  zoomablePhotos.forEach(photo => {
-    photo.onclick = () => {
-      modal.style.display = "block";
-      modalImg.src = photo.src;
-    };
-  });
+<!-- External JS -->
+<script src="../Logic/profile.js"></script>
 
-  closeBtn.onclick = () => {
-    modal.style.display = "none";
-  };
+<script src="../Logic/footer.js"> </script>
 
-  window.onclick = (e) => {
-    if (e.target == modal) {
-      modal.style.display = "none";
-    }
-  };
-   </script>
 
 </body>
 </html>
