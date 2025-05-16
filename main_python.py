@@ -8,7 +8,12 @@ current_group = ""
 
 app = Flask(__name__, template_folder='HTML_files')
 
+
 @app.route('/')
+def login_page():
+    return render_template('login.html')
+
+@app.route('/home')
 def home():
     return render_template('main_page.html')
 
@@ -17,14 +22,21 @@ def base_static(filename):
     return send_from_directory('.', filename)
 
 @app.route('/login_function', methods=['POST'])
-def login(email, password):
+def login():
+    email = request.form['email']
+    password = request.form['password']
     user_data = login.login_user(email, password)
-    return redirect(url_for('home'))
+    if user_data:
+        return redirect(url_for('home'))
 
 @app.route('/register_function', methods=['POST'])
-def register(email, password, name):
+def register():
+    email = request.form['email']
+    password = request.form['password']
+    name = request.form['name']
     user_data = register.register_user(email, password, name)
-    return redirect(url_for('home'))
+    if user_data:
+        return redirect(url_for('home'))
 
 @app.route('/api/post_data')
 def post_data():
