@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dołącz do grupy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="creating_room.css" />
+  <link rel="stylesheet" href="footer.css" />
+
+</head>
+
+<nav class="bottom-nav">
+  <a href="#home" class="nav-item">
+    <span class="material-icons">home</span>
+    <p>Home</p>
+  </a>
+  <a href="#calendar" class="nav-item">
+    <span class="material-icons">calendar_today</span>
+    <p>Calendar</p>
+  </a>
+  <a href="#profile" class="nav-item">
+    <span class="material-icons">person</span>
+    <p>Profile</p>
+  </a>
+</nav>
+
+
+<body>
+  <div class="join-container">
+    <h1>Dołącz do grupy</h1>
+    <form>
+      <!-- Group Name -->
+      <label for="group-name">Nazwa grupy</label>
+      <input type="text" id="group-name" placeholder="Wpisz nazwę grupy" required />
+
+      <!-- Category Select -->
+      <label for="category">Kategoria dzisiejszego wyzwania</label>
+      <select id="category" required>
+        <option value="">-- Wybierz kategorię --</option>
+        <option value="run">🏃 Bieganie</option>
+        <option value="walk">🚶 Spacer</option>
+        <option value="bike">🚴 Rower</option>
+        <option value="swim">🏊 Pływanie</option>
+        <option value="custom">🧩 Inna aktywność</option>
+      </select>
+
+      <!-- Optional: Invite Code -->
+      <label for="invite">Kod zaproszenia (jeśli wymagany)</label>
+      <input type="text" id="invite" placeholder="Opcjonalnie wpisz kod" />
+
+      <!-- Role Choice -->
+      <label for="role">Dołącz jako</label>
+      <select id="role">
+        <option value="participant">👤 Uczestnik</option>
+        <option value="observer">👁️ Obserwator</option>
+      </select>
+
+      <!-- Privacy Option -->
+      <div class="checkbox">
+        <input type="checkbox" id="public-group" />
+        <label for="public-group">Grupa publiczna</label>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit">Dołącz</button>
+    </form>
+  </div>
+</body>
+
+
+<nav class="bottom-nav">
+  <a href="#home" class="nav-item">
+    <span class="material-icons">home</span>
+    <p>Home</p>
+  </a>
+  <a href="#calendar" class="nav-item">
+    <span class="material-icons">calendar_today</span>
+    <p>Calendar</p>
+  </a>
+  <a href="#profile" class="nav-item">
+    <span class="material-icons">person</span>
+    <p>Profile</p>
+  </a>
+</nav>
+
+</html>
