@@ -5,10 +5,19 @@ const monthSelect = document.getElementById('monthSelect');
 const yearSelect = document.getElementById('yearSelect');
 
 // Here connect DB - SAMPLE DATA
-const imageMap = {
-  '2025-05-11': 'images/photo_01.jpg',
-  '2025-06-05': 'https://via.placeholder.com/300x600.png?text=June+5',
-};
+var imageMap = {};
+document.addEventListener("DOMContentLoaded", () => {
+  fetch('/api/calendar-images')
+    .then(response => response.json())
+    .then(data => {
+      imageMap = data;
+      console.log("Image map loaded:", imageMap);
+      // You can now call any function that uses imageMap
+    })
+    .catch(error => {
+      console.error("Error loading image map:", error);
+    });
+});
 
 // Populate month names
 const monthNames = [
