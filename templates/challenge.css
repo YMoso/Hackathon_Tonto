@@ -1,0 +1,118 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to bottom right, #f7f5ff, #ece8ff);
+  padding: 2rem 1rem;
+  color: hsl(0, 0%, 20%);
+}
+
+.challenge-wrapper {
+  max-width: 420px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(81, 45, 168, 0.1);
+}
+
+.challenge-wrapper h2 {
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  color: #512da8;
+  text-align: center;
+  font-weight: 700;
+}
+
+.challenge-wrapper h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  color: #444;
+  border-left: 4px solid #512da8;
+  padding-left: 10px;
+}
+
+.question-block {
+  margin-bottom: 2.5rem;
+}
+
+.question-block p {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.options label {
+  background: #f5f4fa;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  font-weight: 500;
+}
+
+.options label:hover {
+  background-color: #ece7ff;
+}
+
+.options input[type="radio"] {
+  display: none;
+}
+
+.options input[type="radio"]:checked + label,
+.options label:has(input[type="radio"]:checked) {
+  background-color: #ede6ff;
+  border-color: #512da8;
+  color: #512da8;
+  font-weight: 600;
+  box-shadow: 0 0 0 2px rgba(81, 45, 168, 0.2);
+}
+
+.view-btn {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #512da8;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(81, 45, 168, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.view-btn:hover {
+  background-color: #5c6bc0;
+  transform: scale(1.03);
+}
+
+.back-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #512da8;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.back-arrow:hover {
+  color: #5c6bc0;
+}
+
+.back-arrow .material-icons {
+  font-size: 20px;
+}
