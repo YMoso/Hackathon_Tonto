@@ -14,7 +14,8 @@ def register_user(email, password, name):
     }
     response = requests.post(signup_url, json=payload)
     if response.status_code != 200:
-        raise Exception("Failed to register user:", response.json())
+        print("Failed to register user:", response.json())
+        return None
 
     data = response.json()
     id_token = data["idToken"]
@@ -24,12 +25,16 @@ def register_user(email, password, name):
     user_data = {
         "email": email,
         "name": name,
-        "photos": ""  # Initially empty
+        "photos": "",  # Initially empty
+        "groups": "",
+        "challenges": "",
+        "coins": "",
     }
     user_url = f"{DATABASE_URL}users/{local_id}.json?auth={id_token}"
     db_response = requests.put(user_url, json=user_data)
     if db_response.status_code != 200:
-        raise Exception("Failed to add user to database:", db_response.json())
+        print("Failed to add user to database:", db_response.json())
+        return None
 
     print("User registered and added to database.")
     return {

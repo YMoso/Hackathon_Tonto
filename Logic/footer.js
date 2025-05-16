@@ -1,6 +1,6 @@
 // Load the footer HTML into the placeholder
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("footer.html")
+  fetch("/footer")
     .then(response => response.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
