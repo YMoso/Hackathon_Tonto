@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile</title>
+  <link rel="stylesheet" href="../templates/profile.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../templates/footer.css" />
+</head>
+<body>
+
+  <div class="profile-wrapper">
+    <div class="profile-header">
+      <h2>Profile</h2>
+      <div class="profile-icons">
+        <span class="material-icons">ios_share</span>
+        <span class="material-icons">settings</span>
+      </div>
+    </div>
+
+    <div class="profile-info">
+      <img src="https://i.pravatar.cc/120" class="avatar-large" />
+      <h3 class="username">Emily</h3>
+      <p class="handle">@emilywalker</p>
+      <p class="location">London</p>
+    </div>
+
+    <div class="profile-section">
+    <a href="groups.html" class="section-title link-row">
+        <p>Your Groups</p>
+        <span class="material-icons">chevron_right</span>
+    </a>
+      <div class="friends-carousel">
+        <img src="https://i.pravatar.cc/60?img=10" />
+        <img src="https://i.pravatar.cc/60?img=12" />
+        <img src="https://i.pravatar.cc/60?img=20" />
+        <img src="https://i.pravatar.cc/60?img=24" />
+        <img src="https://i.pravatar.cc/60?img=28" />
+      </div>
+    </div>
+
+    <div class="profile-section photo-gallery">
+        <div class="section-title">
+            <p>Your Recent Posts</p>
+        </div>
+        <div class="recent-photos">
+            <img src="../Images/IMG_1165.jpg" alt="My Post 1" class="zoomable-photo">
+            <img src="IMG_1166.jpg" alt="My Post 2" class="zoomable-photo">
+            <img src="IMG_1167.jpg" alt="My Post 3" class="zoomable-photo">
+        </div>
+        </div>
+
+        <!-- Modal to preview image -->
+        <div id="photoModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav">
+    <a href="main_page.html" class="nav-item">
+      <span class="material-icons">home</span>
+      <p>Home</p>
+    </a>
+    <a href="calendar.html" class="nav-item">
+      <span class="material-icons">calendar_today</span>
+      <p>Calendar</p>
+    </a>
+    <a href="profile.html" class="nav-item">
+      <span class="material-icons">person</span>
+      <p>Profile</p>
+    </a>
+  </nav>
+
+  <script>
+  const modal = document.getElementById("photoModal");
+  const modalImg = document.getElementById("modalImage");
+  const zoomablePhotos = document.querySelectorAll(".zoomable-photo");
+  const closeBtn = document.querySelector(".close");
+
+  zoomablePhotos.forEach(photo => {
+    photo.onclick = () => {
+      modal.style.display = "block";
+      modalImg.src = photo.src;
+    };
+  });
+
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+  };
+
+  window.onclick = (e) => {
+    if (e.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+   </script>
+
+</body>
+</html>
