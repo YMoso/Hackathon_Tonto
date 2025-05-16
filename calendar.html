@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photo Calendar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="calendar.css">
+  <link rel="stylesheet" href="footer.css" />
+</head>
+<body>
+  <div id="monthYearSelector">
+    <select id="monthSelect">
+    </select>
+
+    <select id="yearSelect">
+      <!-- Populated via JS -->
+    </select>
+  </div>
+  <div class="weekdays">
+  <div>MON</div>
+  <div>TUE</div>
+  <div>WED</div>
+  <div>THU</div>
+  <div>FRI</div>
+  <div>SAT</div>
+  <div>SUN</div>
+  </div>
+  <div class="calendar" id="calendar"></div>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <img id="photo" src="" alt="Photo of the day" />
+      <h3 id="goalDescription">goal_placeholder</h3>
+      <div class="close" onclick="closeModal()">Close</div>
+
+    </div>
+  </div>
+
+  <script src="calendar.js"> </script>
+  <nav class="bottom-nav">
+    <a href="#home" class="nav-item">
+      <span class="material-icons">home</span>
+      <p>Home</p>
+    </a>
+    <a href="#calendar" class="nav-item">
+      <span class="material-icons">calendar_today</span>
+      <p>Calendar</p>
+    </a>
+    <a href="#profile" class="nav-item">
+      <span class="material-icons">person</span>
+      <p>Profile</p>
+    </a>
+  </nav>
+</body>
+
+</html>
