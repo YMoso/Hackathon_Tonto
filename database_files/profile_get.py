@@ -1,8 +1,8 @@
 import requests
 
-DATABASE_URL = 'https://your-project-id.firebaseio.com/'  # Replace with your Firebase DB URL
+DATABASE_URL = "https://hackaton-b34ea-default-rtdb.europe-west1.firebasedatabase.app/"
 
-def get_user_name(user_id, id_token):
+def get_user_name(id_token, user_id):
     url = f"{DATABASE_URL}users/{user_id}/name.json?auth={id_token}"
     response = requests.get(url)
 

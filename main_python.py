@@ -4,6 +4,7 @@ from database_files import login
 from database_files import register
 from database_files import groups_get
 from database_files import profile_get
+from database_files import photo_get_calendar
 import secrets
 
 
@@ -38,6 +39,12 @@ def calendar():
     if 'userId' not in session:
         return redirect(url_for('login_page'))
     return render_template('calendar.html')
+
+@app.route('/api/calendar-images')
+def calendar_images():
+    # Sample logic, replace with real DB fetch
+    image_map = photo_get_calendar.get_user_photos(session['idToken'], session['user_id'])
+    return jsonify(image_map)
 
 @app.route('/create-group')
 def create_group():
@@ -80,7 +87,7 @@ def login_func():
         print(user_data)
         session['idToken'] = user_data['idToken']
         session['userId'] = user_data['localId']
-        session['name'] = profile_get.get_user_name()
+        session['name'] = profile_get.get_user_name(session['idToken'], session['userId'])
         groups_list = groups_get.get_user_group_ids(session['idToken'], session['userId'])
         if groups_list:
             return redirect(url_for('home'))
@@ -102,7 +109,11 @@ def register_func():
         session['idToken'] = user_data['idToken']
         session['email'] = email
         session['name'] = name
-        return redirect(url_for('home'))
+        groups_list = groups_get.get_user_group_ids(session['idToken'], session['userId'])
+        if groups_list:
+            return redirect(url_for('home'))
+        else:
+            return redirect(url_for('group_options'))
     else:
         return None
 
@@ -117,6 +128,10 @@ def post_data():
 @app.route('/templates/<path:filename>')
 def serve_css(filename):
     return send_from_directory('templates', filename)
+
+@app.route('/js/<path:filename>')
+def serve_js(filename):
+    return send_from_directory('Logic', filename)
 
 
 if __name__ == '__main__':
