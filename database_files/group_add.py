@@ -4,11 +4,10 @@ import time
 FIREBASE_API_KEY = "your-api-key"
 DATABASE_URL = "https://hackaton-b34ea-default-rtdb.europe-west1.firebasedatabase.app/"
 
-def create_group(id_token, user_id, topic, code):
+def create_group(id_token, user_id, topic):
     # Step 1: Create group entry with auto-generated key
     group_data = {
         "topic": topic,
-        "code": code,
         "users": {
             user_id: True
         },
