@@ -8,9 +8,10 @@
 }
 
 body {
-  background: white;
+  /*background: white;*/
   min-height: 100vh;
   padding: 2rem 1rem 80px;
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
 }
 
 .feed {
