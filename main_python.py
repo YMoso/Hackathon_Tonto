@@ -22,20 +22,24 @@ def base_static(filename):
     return send_from_directory('.', filename)
 
 @app.route('/login_function', methods=['POST'])
-def login():
+def login_func():
+    global user_data
     email = request.form['email']
     password = request.form['password']
     user_data = login.login_user(email, password)
     if user_data:
+        print(user_data)
         return redirect(url_for('home'))
 
 @app.route('/register_function', methods=['POST'])
-def register():
+def register_func():
+    global user_data
     email = request.form['email']
     password = request.form['password']
     name = request.form['name']
     user_data = register.register_user(email, password, name)
     if user_data:
+        print(user_data)
         return redirect(url_for('home'))
 
 @app.route('/api/post_data')
