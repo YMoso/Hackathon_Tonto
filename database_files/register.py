@@ -1,7 +1,8 @@
 import requests
 
-FIREBASE_API_KEY = "your-api-key"
+FIREBASE_API_KEY = "AIzaSyDjw4uS6g8DIzjn68c4y0D-RSeq94VvaBs"
 DATABASE_URL = "https://hackaton-b34ea-default-rtdb.europe-west1.firebasedatabase.app/"  # include trailing slash!
+
 
 def register_user(email, password, name):
     # Step 1: Register with Firebase Auth
