@@ -95,11 +95,27 @@
     </div>
   </div>
 
+<button class="btn" id="postBtn">+</button>
+  <div class="popup" id="postPopup">
+  <div class="popup-content">
 
+    <form id="postForm">
+      <button id="closePopupBtn" class="close-btn">×</button>
+      <label for="mainImage">Select an image:</label>
+      <input type="file" id="mainImage" accept="image/*" required /><br><br>
+
+      <label for="captionText">Caption:</label>
+      <textarea id="captionText" rows="3" required></textarea><br><br>
+
+      <button type="submit" class="reaction-btn">Post</button>
+    </form>
+  </div>
+</div>
 <!-- Footer placeholder -->
   <div id="footer-placeholder"></div>
 
 <script src="../Logic/footer.js"> </script>
+<script src="../Logic/main_page.js"> </script>
 
 </body>
 </html>
