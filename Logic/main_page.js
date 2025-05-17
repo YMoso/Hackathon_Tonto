@@ -12,19 +12,31 @@ closeBtn.addEventListener('click', () => {
   popup.classList.remove('show'); // new
 });
 
-postForm.addEventListener('submit', function (e) {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+  fetch('/api/add_posts', { method: 'POST' })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      const posts = data;  // Assuming data is an object mapping photo info
+      console.log("Image map loaded:", posts);
 
-  const mainFile = document.getElementById('mainImage').files[0];
-  const caption = document.getElementById('captionText').value;
+      // Example function to render images/posts on the page
+      renderFeedWithImages(posts);
+    })
+    .catch(error => {
+      console.error("Error loading image map:", error);
+    });
+});
 
-  if (!mainFile) return;
 
-  const readerMain = new FileReader();
+function renderFeedWithImages(imageMap) {
+  const feed = document.querySelector('.feed');
+  feed.innerHTML = ""; // Clear existing feed if any
 
-  readerMain.onload = function () {
-    const mainSrc = readerMain.result;
+  for (const photoId in imageMap) {
+    const photo = imageMap[photoId];
 
+    // Create post element (adapt as needed)
     const post = document.createElement('div');
     post.className = 'main-container';
 
@@ -32,24 +44,21 @@ postForm.addEventListener('submit', function (e) {
       <div class="profile">
         <img src="https://i.pravatar.cc/150?img=${Math.floor(Math.random() * 70)}" class="avatar" />
         <div>
-          <h2 class="username">you</h2>
-          <p class="timestamp">just now</p>
+          <h2 class="username">${photo.uploadedBy || "unknown"}</h2>
+          <p class="timestamp">${photo.timestamp || "some time ago"}</p>
         </div>
       </div>
       <div class="photo-section">
-        <img src="${mainSrc}" class="main-photo" />
+        <img src="${photo.url}" class="main-photo" />
       </div>
-      <p class="caption">${caption}</p>
+      <p class="caption">${photo.caption || ""}</p>
       <div class="reactions">
-        <button class="reaction-btn">❤️ Like <span>0</span></button>
+        <button class="reaction-btn">❤️ Like <span>${photo.likes || 0}</span></button>
         <button class="reaction-btn">💬 Comment</button>
       </div>
     `;
 
     feed.prepend(post);
-    popup.classList.remove('show');
-    postForm.reset();
-  };
+  }
+}
 
-  readerMain.readAsDataURL(mainFile);
-});

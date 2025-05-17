@@ -12,7 +12,7 @@
 <body>
 
   <div class="public-container" id="public-container">
-    <a href="/home" class="back-btn" onclick="history.back()"><i class="fas fa-arrow-left"></i> Powrót</a>
+    <a href="/group_options" class="back-btn" onclick="history.back()"><i class="fas fa-arrow-left"></i> Powrót</a>
     <h1>Publiczne grupy</h1>
 
     <form id="public-invite-form">
@@ -23,9 +23,7 @@
     </form>
   </div>
 
-  <div id="footer-placeholder"></div>
 
-  <script src="{{ url_for('serve_js', filename='footer.js') }}"></script>
   <script>
     const publicInviteForm = document.getElementById('public-invite-form');
     const publicInviteCodeInput = document.getElementById('public-invite-code');

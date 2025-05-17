@@ -7,10 +7,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="../templates/group_options.css" />
-  <link rel="stylesheet" href="../templates/footer.css">
+  <link rel="stylesheet" href="{{ url_for('serve_css', filename='footer.css') }}">
 </head>
-
-
 
 <body>
 
@@ -20,16 +18,12 @@
     <p>Dołącz do wyzwania i rywalizuj ze znajomymi.</p>
 
     <div class="main-buttons">
-      <a href="create_group.html" id="create-btn" class="btn"><i class="fas fa-plus"></i> Stwórz grupę</a>
-      <a href="join_priv_group.html" id="join-btn" class="btn"><i class="fas fa-users"></i> Dołącz do grupy</a>
-      <a href="join_pub_group.html" id="public-btn" class="btn"><i class="fas fa-globe"></i> Dołącz do innej grupy</a>
+      <a href="/create-group_start" id="create-btn" class="btn"><i class="fas fa-plus"></i> Stwórz grupę</a>
+      <a href="/join_priv_group_start" id="join-btn" class="btn"><i class="fas fa-users"></i> Dołącz do grupy</a>
+      <a href="/join_pub_group_start" id="public-btn" class="btn"><i class="fas fa-globe"></i> Dołącz do innej grupy</a>
     </div>
   </div>
 
 <!-- Footer placeholder -->
-  <div id="footer-placeholder"></div>
-
-<script src="../Logic/footer.js"> </script>
-
 </body>
 </html>

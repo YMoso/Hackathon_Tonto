@@ -12,7 +12,7 @@
 <body>
 
   <div class="join-container" id="join-container">
-    <a href="/home" class="back-btn" onclick="history.back()"><i class="fas fa-arrow-left"></i> Powrót</a>
+    <a href="/group_options" class="back-btn" onclick="history.back()"><i class="fas fa-arrow-left"></i> Powrót</a>
     <h1>Dołącz do grupy</h1>
     <form action="/api/join-priv-group" method="post">
       <label for="group-name">Nazwa grupy</label>
@@ -25,7 +25,6 @@
     </form>
   </div>
 
-  <div id="footer-placeholder"></div>
-  <script src="{{ url_for('serve_js', filename='footer.js') }}"></script>
+
 </body>
 </html>

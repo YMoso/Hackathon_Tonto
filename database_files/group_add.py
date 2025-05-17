@@ -1,18 +1,18 @@
 import requests
 import time
 
-FIREBASE_API_KEY = "your-api-key"
+FIREBASE_API_KEY = "AIzaSyDjw4uS6g8DIzjn68c4y0D-RSeq94VvaBs"
 DATABASE_URL = "https://hackaton-b34ea-default-rtdb.europe-west1.firebasedatabase.app/"
 
-def create_group(id_token, user_id, topic):
+def create_group_db(id_token, user_id, group_name, key):
     # Step 1: Create group entry with auto-generated key
     group_data = {
-        "topic": topic,
+        "group_name": group_name,
         "users": {
-            user_id: True
+            user_id: user_id
         },
+        "key": key,
         "photos": {},
-        "chat": {}
     }
 
     group_post_url = f"{DATABASE_URL}groups.json?auth={id_token}"
@@ -28,5 +28,5 @@ def create_group(id_token, user_id, topic):
     if group_ref_response.status_code != 200:
         raise Exception("Failed to update user's group list:", group_ref_response.json())
 
-    print(f"Group '{topic}' created with ID: {group_id}")
+    print(f"Group '{group_name}' created with ID: {group_id}")
     return group_id

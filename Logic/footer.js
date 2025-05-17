@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Function to load the footer with proper error handling
 function loadFooter(path) {
   return new Promise((resolve, reject) => {
-    fetch(path)
+    fetch("/footer")
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
