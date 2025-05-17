@@ -9,10 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(response => response.json())
     .then(data => {
       console.log(data)
-      const posts = data;  // Assuming data is an object mapping photo info
+      const posts = data;
       console.log("Image map loaded:", posts);
 
-      // Example function to render images/posts on the page
+
       renderFeedWithImages(posts);
       checkFeedEmpty()
     })
@@ -24,13 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function renderFeedWithImages(imageMap) {
   const feed = document.querySelector('.feed');
-  feed.innerHTML = ""; // Clear existing feed if any
+  feed.innerHTML = "";
 
   for (const photoId in imageMap) {
     const photo = imageMap[photoId];
 
 
-    // Create post element (adapt as needed)
+
     const post = document.createElement('div');
     post.className = 'main-container';
     post.innerHTML = `

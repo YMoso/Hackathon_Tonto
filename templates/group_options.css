@@ -29,7 +29,6 @@ body {
   width: 100%;
 }
 
-/* Titles and paragraphs */
 .main-container h1,
 .join-container h1,
 .create-container h1,
@@ -45,7 +44,6 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Main buttons */
 .main-buttons {
   display: flex;
   flex-direction: column;
@@ -72,7 +70,6 @@ body {
   transform: translateY(-8px);
 }
 
-/* Animations */
 .fade-out {
   opacity: 0;
   transform: scale(0.9);
@@ -87,14 +84,12 @@ body {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Join container initially hidden */
 #join-container {
   opacity: 0;
   transform: scale(0.9);
   display: none;
 }
 
-/* Join form */
 .join-container form,
 .create-container form,
 .public-container form{

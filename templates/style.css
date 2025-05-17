@@ -100,7 +100,7 @@ body {
   background-color: #5c6bc0;
 }
 
-/* Bottom Navigation Bar */
+
 .bottom-nav {
   position: fixed;
   bottom: 0;
@@ -392,7 +392,7 @@ body {
   transform: scale(1.03);
 }
 
-/* Modal Styles */
+
 .modal {
   display: none;
   position: fixed;

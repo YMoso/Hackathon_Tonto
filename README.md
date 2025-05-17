@@ -1,8 +1,9 @@
 # Hackathon Project 2025 – Feelu
+![image](https://github.com/user-attachments/assets/214d54e7-3537-4d77-8ded-62e06596a0b4)
 
 This is a web-basedapp built during a hackathon, designed to help users track daily habits. Users can join groups, view progress streaks, and receive motivation through an engaging interface.
-
 ---
+The app allows users to create or join groups with friends, where they can support and motivate each other to complete personal tasks or goals. Users can add tasks, share updates, and track progress by uploading photos as proof of completion. This creates a collaborative and encouraging environment that helps everyone stay accountable and celebrate achievements together.
 
 ## Features
 
@@ -12,6 +13,9 @@ This is a web-basedapp built during a hackathon, designed to help users track da
 - Motivational mindset messages with animation
 - Daily photo uploads mapped to dates
 - AI module for personalized suggestions 
+
+![image](https://github.com/user-attachments/assets/1505d849-3638-4f08-840b-9e087ce61e66)
+![image](https://github.com/user-attachments/assets/8e1ba9a1-86f4-497a-ac22-d4b73a55eb1a)
 
 ---
 
@@ -69,7 +73,7 @@ See [`requirements.txt`](./requirements.txt) for the full list of dependencies. 
 
 ## AI Features
 
-The `ai.py` file in `database_files/` suggests there is experimental functionality related to AI — possibly for personalized messages or recommendations. This may be optional or in progress.
+The project includes AI-powered functionality to provide personalized recommendations based on user-submitted forms.
 
 ---
 

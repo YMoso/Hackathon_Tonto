@@ -39,31 +39,28 @@ for (let year = 2000; year <= currentYear; year++) {
   yearSelect.appendChild(option);
 }
 
-// Set current values
 monthSelect.value = new Date().getMonth();
 yearSelect.value = currentYear;
 
-// Render calendar
 function renderCalendar(year, month) {
-  calendar.innerHTML = ''; // Clear previous content
+  calendar.innerHTML = '';
 
   const firstDayOfMonth = new Date(year, month, 1).getDay();
   const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-  // Blank days
   for (let i = 0; i < firstDayOfMonth; i++) {
     const blank = document.createElement('div');
     calendar.appendChild(blank);
   }
 
-  // Days with images
+
   for (let day = 1; day <= daysInMonth; day++) {
     const div = document.createElement('div');
     div.className = 'day';
     div.setAttribute('data-day', day);
 
     const dateKey = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-    console.log('Rendering date:', dateKey); // add this
+    console.log('Rendering date:', dateKey);
     if (imageMap[dateKey]) {
       div.style.backgroundImage = `url('${imageMap[dateKey]}')`;
     }
