@@ -11,9 +11,9 @@ def join_group(id_token, user_id, group_name, key):
         raise Exception("Failed to fetch groups")
 
     groups_data = groups_response.json()
-    print("📦 All groups data:", groups_data)
+    print("All groups data:", groups_data)
 
-    print(f"📥 Input group_name: '{group_name}', key: '{key}'")
+    print(f"Input group_name: '{group_name}', key: '{key}'")
 
     group_id = None
     for gid, group in groups_data.items():
@@ -23,21 +23,21 @@ def join_group(id_token, user_id, group_name, key):
             break
 
     if not group_id:
-        print("❌ Group not found or invite key incorrect.")
+        print("Group not found or invite key incorrect.")
         return 0
 
     group_user_url = f"{DATABASE_URL}groups/{group_id}/users/{user_id}.json?auth={id_token}"
     group_user_response = requests.put(group_user_url, json=user_id)
 
     if group_user_response.status_code != 200:
-        print("❌ Failed to add user to group.")
+        print("Failed to add user to group.")
         return 0
 
     user_group_url = f"{DATABASE_URL}users/{user_id}/groups/{group_id}.json?auth={id_token}"
     user_group_response = requests.put(user_group_url, json=True)
 
     if user_group_response.status_code != 200:
-        print("❌ Failed to update user's group list.")
+        print("Failed to update user's group list.")
         return 0
 
     print(f"✅ User {user_id} successfully joined group '{group_name}' with ID {group_id}")

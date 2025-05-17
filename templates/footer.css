@@ -39,8 +39,6 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 16px; /* less distance from nav bar */
-  margin-right: 15px;
-  /*padding-right: 7px;*/
   box-shadow: 0 4px 12px rgba(81, 45, 168, 0.3);
   text-decoration: none;
   font-size: 26px;
