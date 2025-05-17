@@ -4,8 +4,7 @@ const photo = document.getElementById('photo');
 const monthSelect = document.getElementById('monthSelect');
 const yearSelect = document.getElementById('yearSelect');
 
-// Here connect DB - SAMPLE DATA
-var imageMap = {};
+var imageMap= {};
 document.addEventListener("DOMContentLoaded", () => {
   fetch('/api/calendar-images')
     .then(response => response.json())
@@ -13,14 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
       imageMap = data;
       console.log("Image map loaded:", imageMap);
       renderCalendar(currentYear, new Date().getMonth());
-      // You can now call any function that uses imageMap
     })
     .catch(error => {
       console.error("Error loading image map:", error);
     });
 });
 
-// Populate month names
+
 const monthNames = [
   'January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'
@@ -32,7 +30,7 @@ monthNames.forEach((name, index) => {
   monthSelect.appendChild(option);
 });
 
-// Populate years
+
 const currentYear = new Date().getFullYear();
 for (let year = 2000; year <= currentYear; year++) {
   const option = document.createElement('option');
@@ -82,8 +80,6 @@ function renderCalendar(year, month) {
     calendar.appendChild(div);
   }
 }
-
-// Initial render
 
 // On change
 monthSelect.addEventListener('change', () => {
