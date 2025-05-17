@@ -69,7 +69,7 @@ See [`requirements.txt`](./requirements.txt) for the full list of dependencies. 
 
 ## AI Features
 
-The `ai.py` file in `database_files/` suggests there is experimental functionality related to AI — possibly for personalized messages or recommendations. This may be optional or in progress.
+The project includes AI-powered functionality to provide personalized recommendations based on user-submitted forms.
 
 ---
 
