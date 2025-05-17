@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dołącz do grupy prywatnej</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../templates/join_priv_group.css" />
+  <link rel="stylesheet" href="../templates/footer.css">
+</head>
+<body>
+
+  <div class="join-container" id="join-container">
+    <a href="main_page.html" class="back-btn" onclick="history.back()"><i class="fas fa-arrow-left"></i> Powrót</a>
+    <h1>Dołącz do grupy</h1>
+    <form>
+      <label for="group-name">Nazwa grupy</label>
+      <input type="text" id="group-name" placeholder="Wpisz nazwę grupy" required />
+
+      <label for="invite">Kod zaproszenia</label>
+      <input type="text" id="invite" placeholder="Wpisz kod" />
+
+      <button id="join-submit" class="btn" type="submit">Dołącz</button>
+    </form>
+  </div>
+
+  <div id="footer-placeholder"></div>
+  <script src="../Logic/footer.js"></script>
+</body>
+</html>

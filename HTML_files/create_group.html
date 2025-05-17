@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stwórz Grupę</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../templates/create_group.css" />
+  <link rel="stylesheet" href="../templates/footer.css">
+</head>
+<body>
+
+  <div class="create-container" id="create-container">
+    <a href="main_page.html" class="back-btn" onclick="history.back()"><i class="fas fa-arrow-left"></i> Powrót</a>
+    <h1>Stwórz grupę</h1>
+
+    <form id="create-group-form">
+      <label for="group-name-create">Nazwa grupy:</label>
+      <input type="text" id="group-name-create" name="groupName" required placeholder="Wpisz nazwę grupy" />
+
+      <div style="margin: 1rem 0;">
+        <label>Twój klucz zaproszenia:</label>
+        <div id="invite-key" style="font-weight: 700; font-family: monospace; font-size: 1.2rem; user-select: all; background:#f0f0f0; padding: 0.5rem; border-radius: 8px;"></div>
+        <small>Klucz ten zostanie przypisany wyłącznie do tej grupy i zapisany w bazie danych.</small>
+      </div>
+
+      <button type="submit" id="create-submit" class="btn">Dalej</button>
+    </form>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../Logic/footer.js"></script>
+  <script>
+    function generateInviteKey(length = 10) {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      let key = '';
+      for (let i = 0; i < length; i++) {
+        key += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      return key;
+    }
+
+    const inviteKeyElem = document.getElementById('invite-key');
+    const createGroupForm = document.getElementById('create-group-form');
+
+    function showInviteKey() {
+      const key = generateInviteKey();
+      inviteKeyElem.textContent = key;
+      inviteKeyElem.dataset.key = key;
+    }
+
+    showInviteKey();
+
+    createGroupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const groupName = document.getElementById('group-name-create').value.trim();
+      const inviteKey = inviteKeyElem.dataset.key;
+
+      if (!groupName) {
+        alert('Podaj nazwę grupy.');
+        return;
+      }
+
+      console.log('Tworzenie grupy:', { groupName, inviteKey });
+      alert(`Grupa "${groupName}" została utworzona z kluczem: ${inviteKey}`);
+    });
+  </script>
+</body>
+</html>
