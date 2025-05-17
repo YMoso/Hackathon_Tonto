@@ -6,7 +6,7 @@ const yearSelect = document.getElementById('yearSelect');
 
 var imageMap= {};
 document.addEventListener("DOMContentLoaded", () => {
-  fetch('/api/calendar-images')
+  fetch('/api/calendar-images', { method: 'POST' })
     .then(response => response.json())
     .then(data => {
       imageMap = data;

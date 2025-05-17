@@ -99,7 +99,7 @@ def pub_group_start():
     return render_template('join_pub_group_start.html')
 
 
-@app.route('/api/calendar-images')
+@app.route('/api/calendar-images', methods=['POST'])
 def calendar_images():
     # Sample logic, replace with real DB fetch
     image_map = photo_get_calendar.get_user_photos(session['idToken'], session['userId'])
