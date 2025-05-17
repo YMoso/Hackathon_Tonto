@@ -1,4 +1,4 @@
-/* Bottom Navigation Styles */
+
 .bottom-nav {
   position: fixed;
   bottom: 0;
@@ -38,7 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px; /* less distance from nav bar */
+  margin-bottom: 16px;
   box-shadow: 0 4px 12px rgba(81, 45, 168, 0.3);
   text-decoration: none;
   font-size: 26px;
@@ -54,14 +54,13 @@
 }
 
 .fab-button.active {
-  background-color: #f44336; /* red when active */
+  background-color: #f44336;
   transform: rotate(45deg);
 }
 
-/* Animation container for the menu options */
 .fab-menu {
   position: fixed;
-  bottom: 80px; /* Position above the FAB button */
+  bottom: 80px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -69,10 +68,9 @@
   align-items: center;
   gap: 16px;
   z-index: 1000;
-  pointer-events: none; /* Start with no interaction */
+  pointer-events: none;
 }
 
-/* Menu items styling */
 .menu-item {
   background-color: #512da8;
   color: white;
@@ -89,7 +87,6 @@
   text-decoration: none;
 }
 
-/* Show menu items when active */
 .fab-menu.active .menu-item {
   opacity: 1;
   transform: translateY(0);
@@ -97,7 +94,7 @@
   cursor: pointer;
 }
 
-/* Stagger the animations */
+
 .fab-menu.active .menu-item:nth-child(1) {
   transition-delay: 0.05s;
 }

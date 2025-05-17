@@ -17,10 +17,10 @@ joinbtn.addEventListener('click', () => {
     main.classList.remove('fade-out');
 
     join.style.display = 'block';
-    void join.offsetWidth; // force reflow
+    void join.offsetWidth;
 
     join.classList.add('fade-in');
-  }, 500); // match fade-out duration
+  }, 500);
 });
 
 backBtnJoin.addEventListener('click', (e) => {
@@ -39,9 +39,9 @@ backBtnJoin.addEventListener('click', (e) => {
     main.classList.add('fade-in');
 
     setTimeout(() => {
-      main.classList.remove('fade-in'); // clean up
+      main.classList.remove('fade-in');
     }, 500);
-  }, 500); // match fade-out duration
+  }, 500);
 });
 
 createbtn.addEventListener('click', () => {
@@ -52,10 +52,10 @@ createbtn.addEventListener('click', () => {
     main.classList.remove('fade-out');
 
     create.style.display = 'block';
-    void create.offsetWidth; // force reflow
+    void create.offsetWidth;
 
     create.classList.add('fade-in');
-  }, 500); // match fade-out duration
+  }, 500);
 });
 
 backBtnCreate.addEventListener('click', (e) => {
@@ -74,9 +74,9 @@ backBtnCreate.addEventListener('click', (e) => {
     main.classList.add('fade-in');
 
     setTimeout(() => {
-      main.classList.remove('fade-in'); // clean up
+      main.classList.remove('fade-in');
     }, 500);
-  }, 500); // match fade-out duration
+  }, 500);
 });
 
 publicbtn.addEventListener('click', () => {
@@ -87,10 +87,10 @@ publicbtn.addEventListener('click', () => {
     main.classList.remove('fade-out');
 
     publiccon.style.display = 'block';
-    void publiccon.offsetWidth; // force reflow
+    void publiccon.offsetWidth;
 
     publiccon.classList.add('fade-in');
-  }, 500); // match fade-out duration
+  }, 500)
 });
 
 backBtnPub.addEventListener('click', (e) => {
@@ -111,10 +111,9 @@ backBtnPub.addEventListener('click', (e) => {
     setTimeout(() => {
       main.classList.remove('fade-in'); // clean up
     }, 500);
-  }, 500); // match fade-out duration
+  }, 500);
 });
 
-// Function to generate random invite key (e.g. 8 chars alphanumeric)
 function generateInviteKey(length = 10) {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   let key = '';
@@ -127,17 +126,14 @@ function generateInviteKey(length = 10) {
 const inviteKeyElem = document.getElementById('invite-key');
 const createGroupForm = document.getElementById('create-group-form');
 
-// Generate and show invite key on page load (or when container is shown)
 function showInviteKey() {
   const key = generateInviteKey();
   inviteKeyElem.textContent = key;
-  inviteKeyElem.dataset.key = key;  // store key in dataset for later use (e.g. sending to DB)
+  inviteKeyElem.dataset.key = key;
 }
 
-// Call this function when the create-container becomes visible
 showInviteKey();
 
-// Handle form submit
 createGroupForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -149,16 +145,10 @@ createGroupForm.addEventListener('submit', (e) => {
     return;
   }
 
-  // Here you would send groupName and inviteKey to your backend / database
   console.log('Tworzenie grupy:', { groupName, inviteKey });
-
-  // After success, proceed to next page or next step
-  // For example:
-  // window.location.href = 'next_page.html';
 
   alert(`Grupa "${groupName}" została utworzona z kluczem: ${inviteKey}`);
 
-  // You can reset form or navigate away
 });
 
 const publicInviteForm = document.getElementById('public-invite-form');
@@ -168,10 +158,10 @@ publicInviteForm.addEventListener('submit', (e) => {
   const code = publicInviteCodeInput.value.trim();
 
   if (code.length !== 10) {
-    e.preventDefault(); // stop form submission
+    e.preventDefault();
     alert('Kod zaproszenia musi mieć dokładnie 10 znaków.');
     publicInviteCodeInput.focus();
   } else {
-    // proceed to next step/page or submit form normally
+
   }
 });

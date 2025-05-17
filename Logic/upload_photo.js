@@ -27,10 +27,10 @@ postForm.addEventListener('submit', function (e) {
       caption: caption
     };
 
-    // Zapisz post do localStorage jako JSON
+
     localStorage.setItem('newPost', JSON.stringify(postData));
 
-    // Przejdź do main_page.html
+
     window.location.href = 'main_page.html';
   };
 
