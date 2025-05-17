@@ -13,14 +13,14 @@ def login_user(email, password):
     response = requests.post(url, json=payload)
     if response.status_code == 200:
         data = response.json()
-        print("🔓 Login successful!")
+        print("Login successful!")
         return {
             "idToken": data["idToken"],
             "refreshToken": data["refreshToken"],
             "localId": data["localId"]
         }
     else:
-        print("❌ Login failed:", response.json())
+        print("Login failed:", response.json())
         return None
 
 

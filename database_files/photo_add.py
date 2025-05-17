@@ -38,7 +38,7 @@ def add_photo_to_group(id_token, user_id, photo_url, caption):
     if user_response.status_code != 200:
         raise Exception("Failed to add photo to user's group folder:", user_response.json())
 
-    print(f"✅ Photo added with ID: {photo_id}")
+    print(f"Photo added with ID: {photo_id}")
     return photo_id
 
 
