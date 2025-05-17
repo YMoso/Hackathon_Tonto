@@ -68,7 +68,6 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Keeps original sizing */
 .day {
   position: relative;
   width: 100%;
@@ -101,7 +100,6 @@ body {
   text-align: center;
 }
 
-/* Modal */
 .modal {
   position: fixed;
   top: 0;

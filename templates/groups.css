@@ -337,7 +337,7 @@ h2{
 .fire-emoji {
   display: inline-block;
   animation: flicker 0.9s infinite ease-in-out;
-  font-size: 1.2rem; /* slightly larger for visual punch */
+  font-size: 1.2rem;
 }
 
 @keyframes flicker {

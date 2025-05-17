@@ -1,4 +1,4 @@
-// Load footer dynamically
+
 fetch("/footer")
   .then(response => response.text())
   .then(data => {
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Image modal functionality
+
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("photoModal");
   const modalImg = document.getElementById("modalImage");
