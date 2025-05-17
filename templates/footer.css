@@ -62,7 +62,7 @@
 /* Animation container for the menu options */
 .fab-menu {
   position: fixed;
-  bottom: px; /* Position above the FAB button */
+  bottom: 80px; /* Position above the FAB button */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
