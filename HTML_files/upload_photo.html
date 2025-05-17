@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stwórz Grupę</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../templates/upload_photo.css" />
+  <link rel="stylesheet" href="../templates/footer.css">
+</head>
+<body>
+
+  <div class="popup" id="postPopup">
+  <div class="popup-content">
+
+    <form id="postForm">
+      <a href="main_page.html" class="back-btn" onclick="history.back()"><i class="fas fa-arrow-left"></i> Powrót</a>
+      <label for="mainImage">Select an image:</label>
+      <input type="file" id="mainImage" accept="image/*" required /><br><br>
+
+      <label for="captionText">Caption:</label>
+      <textarea id="captionText" rows="3" required></textarea><br><br>
+
+      <button type="submit" class="reaction-btn">Post</button>
+    </form>
+  </div>
+</div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../Logic/footer.js"></script>
+  <script src="../Logic/upload_photo.js"> </script>
+</body>
+</html>
