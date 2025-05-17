@@ -26,12 +26,22 @@ app.secret_key = secrets.token_hex(32)
 def login_page():
     return render_template('login.html')
 
+@app.route('/register')
+def register_page():
+    return render_template('register.html')
+
 @app.route('/home')
 def home():
     if 'userId' not in session:
         return redirect(url_for('login_page'))
     return render_template('main_page.html')
 
+
+@app.route('/upload_photo')
+def upload_photo():
+    if 'userId' not in session:
+        return redirect(url_for('login_page'))
+    return render_template('upload_photo.html')
 
 @app.route('/api/posts', methods=['POST'])
 def post_add():
@@ -108,6 +118,12 @@ def add_group():
     groupId = group_add.create_group_db(session['idToken'],session['userId'], groupName, key)
     return render_template('main_page.html')
 
+
+@app.route('/group')
+def show_group():
+    if 'userId' not in session:
+        return redirect(url_for('login_page'))
+    return render_template('group.html')
 
 @app.route('/api/join-priv-group', methods=['POST'])
 def join_priv_group():

@@ -1,9 +1,22 @@
 // Load footer dynamically
-fetch("footer.html")
+fetch("/footer")
   .then(response => response.text())
   .then(data => {
     document.getElementById("footer-placeholder").innerHTML = data;
   });
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetch('/profile', { method: 'POST' })
+    .then(response => response.json())
+    .then(data => {
+      console.log("User profile loaded:", data);
+
+      document.getElementById("profileName").textContent = data.name || "Unknown";
+    })
+    .catch(error => {
+      console.error("Error loading user profile:", error);
+    });
+});
 
 // Image modal functionality
 document.addEventListener("DOMContentLoaded", () => {

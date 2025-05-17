@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Example function to render images/posts on the page
       renderFeedWithImages(posts);
+      checkFeedEmpty()
     })
     .catch(error => {
       console.error("Error loading image map:", error);
@@ -28,20 +29,13 @@ function renderFeedWithImages(imageMap) {
   for (const photoId in imageMap) {
     const photo = imageMap[photoId];
 
-document.addEventListener("DOMContentLoaded", function () {
-  const feed = document.querySelector('.feed');
-  const storedPost = localStorage.getItem('newPost');
-
-  if (storedPost && feed) {
-    const postData = JSON.parse(storedPost);
-
 
     // Create post element (adapt as needed)
     const post = document.createElement('div');
     post.className = 'main-container';
     post.innerHTML = `
       <div class="profile">
-        <img src="${postData.avatar}" class="avatar" />
+        <img src="https://i.pravatar.cc/${ Math.floor(Math.random() * (50 - 100 + 1)) + 50}" class="avatar" />
         <div>
 
           <h2 class="username">${photo.uploadedBy || "unknown"}</h2>
@@ -52,16 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <img src="${photo.url}" class="main-photo" />
       </div>
       <p class="caption">${photo.caption || ""}</p>
-
-          <h2 class="username">${postData.username}</h2>
-          <p class="timestamp">${postData.timestamp}</p>
         </div>
-      </div>
-      <div class="photo-section">
-        <img src="${postData.photo}" class="main-photo" />
-      </div>
-      <p class="caption">${postData.caption}</p>
-
       <div class="reactions">
         <button class="reaction-btn">❤️ Like <span>${photo.likes || 0}</span></button>
         <button class="reaction-btn">💬 Comment</button>
@@ -69,14 +54,11 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
 
     feed.prepend(post);
-n
   }
 }
 
 
-    localStorage.removeItem('newPost'); // usuń po wstawieniu
-  }
-});
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const likeButtons = document.querySelectorAll('.reaction-btn');
@@ -129,5 +111,5 @@ function checkFeedEmpty() {
 }
 
 // Call the function when page loads
-window.addEventListener('DOMContentLoaded', checkFeedEmpty);
+
 
