@@ -31,8 +31,8 @@ def add_photo_to_group(id_token, user_id, photo_url, caption):
 
     photo_id = group_response.json()["name"]  # Firebase auto-generated ID
 
-    # Add to /users/{userId}/groups/{groupId}/photos/{photo_id}
-    user_photo_url = f"{DATABASE_URL}users/{user_id}/groups/{group_id}/photos/{photo_id}.json?auth={id_token}"
+    # Add to /users/{userId}/photos/{photo_id}
+    user_photo_url = f"{DATABASE_URL}users/{user_id}/photos/{photo_id}.json?auth={id_token}"
     user_response = requests.put(user_photo_url, json=photo_data_user)
 
     if user_response.status_code != 200:
