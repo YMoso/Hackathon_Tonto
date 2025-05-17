@@ -13,6 +13,9 @@ This is a web-basedapp built during a hackathon, designed to help users track da
 - Daily photo uploads mapped to dates
 - AI module for personalized suggestions 
 
+![image](https://github.com/user-attachments/assets/1505d849-3638-4f08-840b-9e087ce61e66)
+![image](https://github.com/user-attachments/assets/8e1ba9a1-86f4-497a-ac22-d4b73a55eb1a)
+
 ---
 
 ## Getting Started
