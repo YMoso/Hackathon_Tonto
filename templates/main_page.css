@@ -133,7 +133,14 @@ body {
   align-items: center;
   padding: 0 1rem;
 }
-
+#groupSelect {
+  background: #512da8;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
 .left-section {
   display: flex;
   align-items: center;
