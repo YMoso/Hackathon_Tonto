@@ -58,6 +58,25 @@ function renderFeedWithImages(imageMap) {
 }
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const messageElement = document.getElementById("motivationMessage");
+
+  const messages = [
+    "Great to see you back in action!",
+    "Keep going — your team counts on you!",
+    "Make today count. You're doing awesome!",
+    "Stay focused and share your moment!",
+  ];
+
+  const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+  messageElement.textContent = randomMessage;
+});
+
+
+
+
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
