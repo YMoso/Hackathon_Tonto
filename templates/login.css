@@ -126,6 +126,12 @@ button:hover {
   text-align: right;
   display: inline-block;
   margin-top: -0.5rem;
+  text-decoration: none;
+}
+
+.switch-link {
+  margin-top: 1.5rem;
+  text-align: center;
 }
 
 .switch-link {
