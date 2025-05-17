@@ -1,0 +1,177 @@
+const main = document.getElementById('main-container');
+const join = document.getElementById('join-container');
+const joinbtn = document.getElementById('join-btn');
+const backBtnJoin = document.getElementById('back-btn-join');
+const create = document.getElementById('create-container');
+const createbtn = document.getElementById('create-btn');
+const backBtnCreate = document.getElementById('back-btn-create');
+const publiccon = document.getElementById('public-container');
+const publicbtn = document.getElementById('public-btn');
+const backBtnPub = document.getElementById('back-btn-public');
+
+joinbtn.addEventListener('click', () => {
+  main.classList.add('fade-out');
+
+  setTimeout(() => {
+    main.style.display = 'none';
+    main.classList.remove('fade-out');
+
+    join.style.display = 'block';
+    void join.offsetWidth; // force reflow
+
+    join.classList.add('fade-in');
+  }, 500); // match fade-out duration
+});
+
+backBtnJoin.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  join.classList.remove('fade-in');
+  join.classList.add('fade-out');
+
+  setTimeout(() => {
+    join.style.display = 'none';
+    join.classList.remove('fade-out');
+
+    main.style.display = 'block';
+    void main.offsetWidth;
+
+    main.classList.add('fade-in');
+
+    setTimeout(() => {
+      main.classList.remove('fade-in'); // clean up
+    }, 500);
+  }, 500); // match fade-out duration
+});
+
+createbtn.addEventListener('click', () => {
+  main.classList.add('fade-out');
+
+  setTimeout(() => {
+    main.style.display = 'none';
+    main.classList.remove('fade-out');
+
+    create.style.display = 'block';
+    void create.offsetWidth; // force reflow
+
+    create.classList.add('fade-in');
+  }, 500); // match fade-out duration
+});
+
+backBtnCreate.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  create.classList.remove('fade-in');
+  create.classList.add('fade-out');
+
+  setTimeout(() => {
+    create.style.display = 'none';
+    create.classList.remove('fade-out');
+
+    main.style.display = 'block';
+    void main.offsetWidth;
+
+    main.classList.add('fade-in');
+
+    setTimeout(() => {
+      main.classList.remove('fade-in'); // clean up
+    }, 500);
+  }, 500); // match fade-out duration
+});
+
+publicbtn.addEventListener('click', () => {
+  main.classList.add('fade-out');
+
+  setTimeout(() => {
+    main.style.display = 'none';
+    main.classList.remove('fade-out');
+
+    publiccon.style.display = 'block';
+    void publiccon.offsetWidth; // force reflow
+
+    publiccon.classList.add('fade-in');
+  }, 500); // match fade-out duration
+});
+
+backBtnPub.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  publiccon.classList.remove('fade-in');
+  publiccon.classList.add('fade-out');
+
+  setTimeout(() => {
+    publiccon.style.display = 'none';
+    publiccon.classList.remove('fade-out');
+
+    main.style.display = 'block';
+    void main.offsetWidth;
+
+    main.classList.add('fade-in');
+
+    setTimeout(() => {
+      main.classList.remove('fade-in'); // clean up
+    }, 500);
+  }, 500); // match fade-out duration
+});
+
+// Function to generate random invite key (e.g. 8 chars alphanumeric)
+function generateInviteKey(length = 10) {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let key = '';
+  for (let i = 0; i < length; i++) {
+    key += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return key;
+}
+
+const inviteKeyElem = document.getElementById('invite-key');
+const createGroupForm = document.getElementById('create-group-form');
+
+// Generate and show invite key on page load (or when container is shown)
+function showInviteKey() {
+  const key = generateInviteKey();
+  inviteKeyElem.textContent = key;
+  inviteKeyElem.dataset.key = key;  // store key in dataset for later use (e.g. sending to DB)
+}
+
+// Call this function when the create-container becomes visible
+showInviteKey();
+
+// Handle form submit
+createGroupForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const groupName = document.getElementById('group-name-create').value.trim();
+  const inviteKey = inviteKeyElem.dataset.key;
+
+  if (!groupName) {
+    alert('Podaj nazwę grupy.');
+    return;
+  }
+
+  // Here you would send groupName and inviteKey to your backend / database
+  console.log('Tworzenie grupy:', { groupName, inviteKey });
+
+  // After success, proceed to next page or next step
+  // For example:
+  // window.location.href = 'next_page.html';
+
+  alert(`Grupa "${groupName}" została utworzona z kluczem: ${inviteKey}`);
+
+  // You can reset form or navigate away
+});
+
+const publicInviteForm = document.getElementById('public-invite-form');
+const publicInviteCodeInput = document.getElementById('public-invite-code');
+
+publicInviteForm.addEventListener('submit', (e) => {
+  const code = publicInviteCodeInput.value.trim();
+
+  if (code.length !== 10) {
+    e.preventDefault(); // stop form submission
+    alert('Kod zaproszenia musi mieć dokładnie 10 znaków.');
+    publicInviteCodeInput.focus();
+  } else {
+    // proceed to next step/page or submit form normally
+  }
+});

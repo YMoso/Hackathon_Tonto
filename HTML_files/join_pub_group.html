@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dołącz do grupy publicznej</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../templates/join_pub_group.css" />
+  <link rel="stylesheet" href="../templates/footer.css">
+</head>
+<body>
+
+  <div class="public-container" id="public-container">
+    <a href="main_page.html" class="back-btn" onclick="history.back()"><i class="fas fa-arrow-left"></i> Powrót</a>
+    <h1>Publiczne grupy</h1>
+
+    <form id="public-invite-form">
+      <label for="public-invite-code">Kod zaproszenia:</label>
+      <input type="text" id="public-invite-code" name="inviteCode" placeholder="Wpisz kod zaproszenia" required autocomplete="off" />
+
+      <button type="submit" id="public-submit" class="btn">Dalej</button>
+    </form>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../Logic/footer.js"></script>
+  <script>
+    const publicInviteForm = document.getElementById('public-invite-form');
+    const publicInviteCodeInput = document.getElementById('public-invite-code');
+
+    publicInviteForm.addEventListener('submit', (e) => {
+      const code = publicInviteCodeInput.value.trim();
+      if (code.length !== 10) {
+        e.preventDefault();
+        alert('Kod zaproszenia musi mieć dokładnie 10 znaków.');
+        publicInviteCodeInput.focus();
+      }
+    });
+  </script>
+</body>
+</html>
