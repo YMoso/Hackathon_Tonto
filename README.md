@@ -53,6 +53,7 @@ pip install -r requirements.txt
 ```bash
 python main_python.py
 ```
+The application is designed to run on localhost using port 5000. After starting the app, open your browser and go to http://127.0.0.1:5000 to access it.
 
 ---
 
