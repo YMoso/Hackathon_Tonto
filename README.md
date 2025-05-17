@@ -4,7 +4,6 @@
 This is a web-basedapp built during a hackathon, designed to help users track daily habits. Users can join groups, view progress streaks, and receive motivation through an engaging interface.
 ---
 The app allows users to create or join groups with friends, where they can support and motivate each other to complete personal tasks or goals. Users can add tasks, share updates, and track progress by uploading photos as proof of completion. This creates a collaborative and encouraging environment that helps everyone stay accountable and celebrate achievements together.
----
 
 ## Features
 
