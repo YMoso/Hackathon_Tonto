@@ -12,7 +12,7 @@
 <body>
 
   <div class="create-container" id="create-container">
-    <a href="/home" class="back-btn" onclick="history.back()"><i class="fas fa-arrow-left"></i> Powrót</a>
+    <a href="/group_options" class="back-btn" onclick="history.back()"><i class="fas fa-arrow-left"></i> Powrót</a>
     <h1>Stwórz grupę</h1>
 
     <form id="create-group-form" action="/api/create-group" method="post">
@@ -29,9 +29,6 @@
     </form>
   </div>
 
-  <div id="footer-placeholder"></div>
-
-<script src="{{ url_for('serve_js', filename='footer.js') }}"></script>
   <script>
     function generateInviteKey(length = 10) {
       const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
