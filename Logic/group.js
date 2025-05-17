@@ -79,6 +79,16 @@ function submitChallenge() {
       document.getElementById("postPopup").classList.add("show");
     }
 
+    function fillRandomChallenge() {
+  const topics = Object.keys(feelu_activities);
+  const randomTopic = topics[Math.floor(Math.random() * topics.length)];
+  const activities = feelu_activities[randomTopic];
+  const randomActivity = activities[Math.floor(Math.random() * activities.length)];
+
+  document.getElementById("challenge-title").value = randomTopic;
+  document.getElementById("challenge-desc").value = randomActivity;
+}
+
     function closePostPopup() {
       document.getElementById("postPopup").classList.remove("show");
     }
