@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_from_directory, jsonify, request, redirect, url_for, session
+from flask import Flask, render_template, send_from_directory, jsonify, request, redirect, url_for, session, render_template_string
 from werkzeug.utils import secure_filename
 from database_files import photo_get_group
 from database_files import login
@@ -9,6 +9,7 @@ from database_files import photo_get_calendar
 from database_files import group_add
 from database_files import group_join
 from database_files import photo_add
+from database_files import ai
 import secrets
 import os
 
@@ -165,6 +166,34 @@ def profile():
 def profile_name():
     name = session.get('name', 'Guest')
     return jsonify(name)
+
+@app.route('/challanges')
+def challanges():
+    if 'userId' not in session:
+        return redirect(url_for('login_page'))
+    return render_template('challenge.html')
+
+@app.route('/challanges_result', methods=['POST'])
+def challanges_result():
+
+    q1 = request.form['q1']
+    q2= request.form['q2']
+    q3= request.form['q3']
+    q4= request.form['q4']
+    q5= request.form['q5']
+    q6= request.form['q6']
+    q7= request.form['q7']
+    q8= request.form['q8']
+    prompt = f"Na podstawie, odpowiedzi z ankiety zaproponuj wyzwanie które ma pomoc użytkownikowi w dazeniu do lepszego siebie: 1. Jak opisał(a)byś swój obecny stan psychiczny? odp: {q1} 2.Jak wygląda Twój typowy dzień? odp:{q2} 3.W jaki sposób zazwyczaj ładujesz baterie? od:{q3} 4.Co najbardziej chciał(a)byś teraz poprawić? odp {q4} 5.Ile czasu możesz realistycznie poświęcić na codzienną aktywność? odp: {q5} 6.Jakiego rodzaju aktywności są dla Ciebie najbardziej wykonalne? odp:{q6} 7.Czy obecnie korzystasz z terapii lub narzędzi wspierających zdrowie psychiczne? odp: {q7} 8.Co dziś byłoby dla Ciebie „sukcesem”? odp: {q8}"
+
+    result = ai.get_response(prompt)
+
+    return render_template_string(f"""
+        <script>
+          alert({repr(result)});
+          window.location.href = '/HTML_files/profile.html';  // redirect after alert
+        </script>
+        """)
 
 @app.route('/<path:filename>')
 def base_static(filename):
