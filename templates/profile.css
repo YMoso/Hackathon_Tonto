@@ -29,6 +29,7 @@ body{
   border-radius: 50%;
   border: 4px solid #512da8;
   margin-bottom: 0.5rem;
+  animation: fadeInDown 0.8s ease;
 }
 
 .bio {
@@ -108,6 +109,7 @@ body{
 .handle, .location {
   font-size: 0.9rem;
   color: #888;
+  animation: fadeInDown 0.8s ease;
 }
 
 .profile-section {
@@ -116,6 +118,7 @@ body{
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   padding: 1rem;
   margin-bottom: 1.2rem;
+  animation: fadeInUp 0.8s ease;
 }
 
 .section-title {
@@ -126,6 +129,11 @@ body{
   font-size: 0.9rem;
   margin-bottom: 0.7rem;
 }
+
+#profileName{
+  animation: fadeInDown 0.8s ease;
+}
+
 
 .friends-carousel {
   display: flex;
@@ -251,6 +259,7 @@ a {
 }
 
 .challenge-btn {
+  animation: fadeInUp 0.8s ease;
 
 
   background-color: #512da8;
@@ -283,6 +292,11 @@ a {
 }
 
 
+.handle{
+  animation: fadeInDown 0.8s ease;
+}
+
+
 .challenge-btn:hover {
 
 
@@ -290,3 +304,21 @@ a {
 
 
   transform: scale(1.03);}
+
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
