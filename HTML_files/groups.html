@@ -12,48 +12,59 @@
 <body>
 
   <div class="profile-wrapper">
+    <div class="top-label">
+      <span class="material-icons">groups</span>
+      <h1>Manage Your Social Circles</h1>
+    </div>
+
     <div class="profile-header">
-      <h2>Your Groups</h2>
-      <div class="profile-icons">
-        <a href="profile.html"><span class="material-icons">arrow_back</span></a>
+      <h2>Your Groups:</h2>
+    </div>
+
+  <!-- Group Mindset -->
+<div class="mindset-box">
+  <p class="mindset-title">🧠 Group Mindset</p>
+  <p class="mindset-message">“Small daily improvements lead to stunning results.”</p>
+</div>
+
+<!-- Group List with Progress Bars -->
+<div class="group-list">
+  <a href="group.html" class="group-link">
+    <div class="group-card">
+      <img src="https://i.pravatar.cc/50" class="group-avatar" />
+      <div class="group-info">
+        <p class="group-name">Family</p>
+        <p class="group-description">Read 15 mins together daily</p>
+        <div class="group-stats">
+          <span class="status-tag completed">✅ You did it today!</span>
+          <span class="completion-count">3 of 4 members completed</span>
+        </div>
+        <span class="group-goal">🔥 12-day streak</span>
       </div>
     </div>
+  </a>
 
-    <div class="group-list">
-      <a href="group.html" class="group-link">
-        <div class="group-card">
-          <img src="https://i.pravatar.cc/100?img=51" class="group-avatar" />
-          <p>Family</p>
-        </div>
-      </a>
 
-      <a href="group.html" class="group-link">
-        <div class="group-card">
-          <img src="https://i.pravatar.cc/100?img=52" class="group-avatar" />
-          <p>Football Team</p>
+    <a href="group.html" class="group-link">
+    <div class="group-card">
+      <img src="https://i.pravatar.cc/51" class="group-avatar" />
+      <div class="group-info">
+        <p class="group-name">Football Team</p>
+        <p class="group-description">Stretch every morning</p>
+        <div class="group-stats">
+          <span class="status-tag not-done">❌ Not done yet</span>
+          <span class="completion-count">2 of 6 members completed</span>
         </div>
-      </a>
-
-      <a href="group.html" class="group-link">
-        <div class="group-card">
-          <img src="https://i.pravatar.cc/100?img=53" class="group-avatar" />
-          <p>Study Buddies</p>
-        </div>
-      </a>
-
-      <a href="group.html" class="group-link">
-        <div class="group-card">
-          <img src="https://i.pravatar.cc/100?img=54" class="group-avatar" />
-          <p>Work Friends</p>
-        </div>
-      </a>
+        <span class="group-goal">🔥 7-day streak</span>
+      </div>
     </div>
-  </div>
+  </a>
+</div>
 
-<!-- Footer placeholder -->
+
+  <!-- Footer placeholder -->
   <div id="footer-placeholder"></div>
-
-<script src="../Logic/footer.js"> </script>
+  <script src="../Logic/footer.js"></script>
 
 </body>
 </html>
