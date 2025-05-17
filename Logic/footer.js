@@ -84,6 +84,10 @@ function initializeFooterFunctionality() {
           console.log("User wants to join general group");
           // window.location.href = "general_group.html";
           break;
+
+        case "Dodaj post":
+          console.log("User wants to add post");
+          break;
       }
 
       // Close the menu after selection

@@ -1,34 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login</title>
-  <link rel="stylesheet" href="{{ url_for('serve_css', filename='login.css') }}">
+  <title>Register</title>
+  <link rel="stylesheet" href="../templates/login.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
   <div class="container">
     <div class="form-container">
-      <form action="/login_function" method="post">
-        <h1>Zaloguj się</h1>
+      <form action="/register_function" method="post">
+        <h1>Utwórz konto</h1>
+        <input type="text" name="name" placeholder="Nazwa" required>
         <input type="email" name="email" placeholder="Email" required>
         <input type="password" name="password" placeholder="Hasło" required>
-        <a href="#" class="forgot">Zapomniałeś hasła?</a>
-        <button type="submit">Zaloguj się</button>
+        <button type="submit">Zarejestruj się</button>
       </form>
 
       <div class="switch-link">
-        <p>Jeszcze nie masz konta?</p>
-        <a href="register.html"><button class="secondary-btn">Zarejestruj się</button></a>
+        <p>Masz już konto?</p>
+        <a href="login.html"><button class="secondary-btn">Zaloguj się</button></a>
       </div>
     </div>
-
-
-<script src="{{ url_for('serve_js', filename='login.js') }}"></script>
-
+  </div>
 </body>
 </html>

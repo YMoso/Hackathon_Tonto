@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BeReal Feed</title>
+  <title>Feelu</title>
   <link rel="stylesheet" href="../templates/main_page.css" />
   <link rel="stylesheet" href="../templates/footer.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
@@ -11,39 +11,44 @@
   
 </head>
 <body>
-  <div class="top-bar">
-    <div class="left-section">
-      <div class="greeting-text">
-        <h2>Hey, Emily</h2>
-        <p>What’s new...</p>
-      </div>
-    </div>
-    <div class="people-counter">
-      <span class="material-icons">groups</span>
-      <span class="people-number">2/37</span>
+<div class="top-bar">
+  <div class="left-section">
+    <img src="../images/logo.png" alt="Logo" class="logo" />
+    <div class="greeting-area">
+      <h2>Hey, Emily</h2>
+      <select id="groupSelect">
+        <option value="0">All Groups</option>
+        <option value="1">Family</option>
+        <option value="2">Work Friends</option>
+      </select>
     </div>
   </div>
+
   
   <div class="feed">
 
   </div>
 
-<button class="btn" id="postBtn">+</button>
-  <div class="popup" id="postPopup">
-  <div class="popup-content">
 
-    <form id="postForm" action="/api/posts" method="post" enctype="multipart/form-data">
-      <button id="closePopupBtn" class="close-btn">×</button>
-      <label for="mainImage">Select an image:</label>
-      <input type="file" id="mainImage" accept="image/*" name="img" required /><br><br>
+  <div class="right-section">
+    <div class="counter-block">
+      <span class="material-icons">whatshot</span>
+      <span class="streak-text"><strong id="streak-count">5</strong></span>
+    </div>
 
-      <label for="captionText">Caption:</label>
-      <textarea id="captionText" rows="3" name="caption" required></textarea><br><br>
-
-      <button type="submit" class="reaction-btn">Post</button>
-    </form>
+    <div class="counter-block">
+      <span class="material-icons">groups</span>
+      <span class="people-text">2 / 6</span>
+    </div>
   </div>
 </div>
+  
+  <div class="feed">
+
+    </div>
+  </div>
+
+
 <!-- Footer placeholder -->
   <div id="footer-placeholder"></div>
 
