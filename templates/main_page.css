@@ -156,8 +156,6 @@ body {
 .people-counter .material-icons {
   font-size: 20px;
   margin-right: 5px;
-<<<<<<< HEAD
-=======
 }
 #postBtn {
   position: fixed;
@@ -266,5 +264,4 @@ body {
 /* Optional: position: relative to form so close button anchors properly */
 .popup form {
   position: relative;
->>>>>>> origin/main
 }
