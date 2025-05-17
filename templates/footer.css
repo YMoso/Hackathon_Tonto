@@ -28,29 +28,30 @@
   margin-bottom: 2px;
 }
 
-/* Floating + button in the center */
+
 .fab-button {
-  background-color: #4caf50; /* green */
+  background-color: #512da8;
   color: white;
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 28px; /* lift it above nav bar */
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  margin-bottom: 16px; /* less distance from nav bar */
+  box-shadow: 0 4px 12px rgba(81, 45, 168, 0.3);
   text-decoration: none;
+  font-size: 26px;
   position: relative;
-  top: -20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   z-index: 1001;
   cursor: pointer;
   transition: transform 0.1s, background-color 0.1s;
 }
 
-.fab-button .material-icons {
-  font-size: 28px;
-  transition: transform 0.3s;
+.fab-button:hover {
+  background-color: #5c6bc0;
+  transform: scale(1.05);
 }
 
 .fab-button.active {
@@ -61,7 +62,7 @@
 /* Animation container for the menu options */
 .fab-menu {
   position: fixed;
-  bottom: 120px; /* Position above the FAB button */
+  bottom: 80px; /* Position above the FAB button */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
