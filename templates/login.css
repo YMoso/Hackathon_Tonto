@@ -127,3 +127,30 @@ button:hover {
   display: inline-block;
   margin-top: -0.5rem;
 }
+
+.switch-link {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.switch-link p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.secondary-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: transparent;
+  color: #512da8;
+  border: 2px solid #512da8;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background-color: #512da8;
+  color: white;
+}
