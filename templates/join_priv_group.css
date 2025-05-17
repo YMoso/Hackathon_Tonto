@@ -76,3 +76,7 @@ input {
 .back-btn:hover {
   color: #5c6bc0;
 }
+
+a {
+  text-decoration: none;
+}
