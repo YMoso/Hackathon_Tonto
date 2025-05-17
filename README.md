@@ -1,4 +1,5 @@
 # Hackathon Project 2025 – Feelu
+![logo](https://github.com/user-attachments/assets/cd639b4e-6daf-4045-84b4-47887066c1cb)
 
 This is a web-basedapp built during a hackathon, designed to help users track daily habits. Users can join groups, view progress streaks, and receive motivation through an engaging interface.
 
