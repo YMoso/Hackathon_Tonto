@@ -9,7 +9,6 @@ from database_files import photo_get_calendar
 from database_files import group_add
 from database_files import group_join
 from database_files import photo_add
-from database_files import ai
 import secrets
 import os
 
@@ -186,12 +185,11 @@ def challanges_result():
     q8= request.form['q8']
     prompt = f"Na podstawie, odpowiedzi z ankiety zaproponuj wyzwanie które ma pomoc użytkownikowi w dazeniu do lepszego siebie: 1. Jak opisał(a)byś swój obecny stan psychiczny? odp: {q1} 2.Jak wygląda Twój typowy dzień? odp:{q2} 3.W jaki sposób zazwyczaj ładujesz baterie? od:{q3} 4.Co najbardziej chciał(a)byś teraz poprawić? odp {q4} 5.Ile czasu możesz realistycznie poświęcić na codzienną aktywność? odp: {q5} 6.Jakiego rodzaju aktywności są dla Ciebie najbardziej wykonalne? odp:{q6} 7.Czy obecnie korzystasz z terapii lub narzędzi wspierających zdrowie psychiczne? odp: {q7} 8.Co dziś byłoby dla Ciebie „sukcesem”? odp: {q8}"
 
-    result = ai.get_response(prompt)
-
+    result = "Idz pobiegac, ewidentnie"
+    print(result)
     return render_template_string(f"""
         <script>
           alert({repr(result)});
-          window.location.href = '/HTML_files/profile.html';  // redirect after alert
         </script>
         """)
 
