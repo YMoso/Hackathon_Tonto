@@ -6,12 +6,12 @@ fetch("/footer")
   });
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch('/profile', { method: 'POST' })
+  fetch('/profile_name', { method: 'POST' })
     .then(response => response.json())
     .then(data => {
       console.log("User profile loaded:", data);
 
-      document.getElementById("profileName").textContent = data.name || "Unknown";
+      document.getElementById("profileName").textContent = data || "Unknown";
     })
     .catch(error => {
       console.error("Error loading user profile:", error);

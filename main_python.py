@@ -159,8 +159,12 @@ def group_options():
 def profile():
     if 'userId' not in session:
         return redirect(url_for('login_page'))
+    return render_template('profile.html')
+
+@app.route('/profile_name', methods=['POST'])
+def profile_name():
     name = session.get('name', 'Guest')
-    return render_template('profile.html', username=name)
+    return jsonify(name)
 
 @app.route('/<path:filename>')
 def base_static(filename):
