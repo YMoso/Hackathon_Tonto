@@ -1,0 +1,117 @@
+/* upload_photo.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.popup {
+  position: fixed;       /* Fix it relative to the viewport */
+  top: 0;                /* Top edge at 0 */
+  left: 0;               /* Left edge at 0 */
+  width: 100vw;          /* Full viewport width */
+  height: 100vh;         /* Full viewport height */
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+
+  display: flex;         /* Flexbox to center content */
+  justify-content: center; /* center horizontally */
+  align-items: center;   /* center vertically */
+  z-index: 1000;         /* on top */
+  padding: 1rem;         /* some padding on smaller screens */
+}
+.popup .popup-content {
+  position: relative;
+  border-radius: 20px;
+  max-width: 700px;
+  width: 100%;
+  min-height: 500px;
+  padding: 50px 30px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+form {
+  position: relative;
+  background-color: white;
+  padding: 50px 30px 80px; /* więcej miejsca u góry i u dołu */
+  border-radius: 20px;
+  width: 100%;
+  max-width: 700px;
+  min-height: 500px; /* wyższy formularz */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+h2 {
+  margin-top: 0;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+input[type="file"] {
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+  height: 120px; /* wyższe pole tekstowe */
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+}
+
+button[type="submit"] {
+  position: absolute;
+  bottom: 20px;  /* umieszczony na dole formularza */
+  left: 30px;
+  right: 30px;
+  background-color: #512da8;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+/* Close button inside popup */
+.back-btn {
+  background: none;
+  border: none;
+  color: #512da8;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.close-btn:hover {
+  color: #000;
+}

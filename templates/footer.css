@@ -107,6 +107,9 @@
 .fab-menu.active .menu-item:nth-child(3) {
   transition-delay: 0.15s;
 }
+.fab-menu.active .menu-item:nth-child(4) {
+  transition-delay: 0.2s;
+}
 
 /* Overlay to close the menu */
 .menu-overlay {
